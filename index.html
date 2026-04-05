@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMC9A - 9A's Official Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/src/logo.jpg">
+    <style>
+        .blue67{
+            color: #052cf1;
+        }
+        .libre-baskerville-regular {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        .libre-baskerville-bold {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 700;
+        font-style: normal;
+        }
+
+        .libre-baskerville-regular-italic {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: italic;
+        }
+
+        body, html{
+            background: #F3FFC6;
+            overflow-x: hidden;
+        }
+
+        .barlow {
+            font-family: "Barlow";
+        }
+
+        .bluets{
+            display: flex;
+            width: 100%;
+            background: #052cf1;
+            padding: 2rem;
+        }
+        .welcome{
+            color: white;
+            font-size: 4.5rem;
+        }
+        .stats{
+            display: flex   ;
+            justify-content: space-around;
+            gap: 2rem;
+            background: #ee0e00;
+            padding: 1.5rem;
+        }
+        .propose{
+            outline: 0px solid white;
+            outline-offset: 0px;
+            transition: 0.2s;
+        }
+        .propose:hover{
+            outline: 1px solid #ee0e00;
+            outline-offset: 4px;
+        }
+        .bar{
+            font-family: "Barlow";
+            color: rgb(243, 243, 243);
+        }
+        img{
+            width: 40rem;
+            margin-bottom: 4rem;
+        }
+    </style>
+    <script src="/src/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+</head>
+<body>
+    <header class="fixed w-full flex flex-col bg-lime-50 " style="z-index: 3;">
+        <div class="flex flex-row p-5 px-10 items-end">
+            <h1 class="text-3xl text-black lg:mr-10"><a href="/"><span class="libre-baskerville-regular">TMC</span><span class="libre-baskerville-bold">9A</span></a></h1>
+        <div class="hidden lg:block">
+            <a href="/contact" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">CONTACT</span>]</a>
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">AGENDA</span>]</a>
+            <a href="https://archivetemp.tmc9a.my.id" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">PUBLIC ARCHIVE</span>]</a>
+            <a href="/tools/" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">TOOLS</span>]</a>
+        </div>
+        <a href="/propose" class="hidden lg:block barlow font-bold hover:outline-2 outline-red-500 duration-100 outline-0 outline-offset-2" style="background: #ee0e00;padding: 0.5rem;color: white;margin-left: auto;">[PROPOSE A CHANGE]</a>
+        <button class="ml-auto lg:hidden" onclick="$('#navbar').toggle()"><i class="bi bi-list text-black text-4xl"></i></button>
+        </div>
+        <div class="bg-slate-200 flex flex-col p-4 px-10 gap-4" id="navbar">
+            <a href="/contact" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">CONTACT</span>]</a>
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">AGENDA</span>]</a>
+            <a href="https://archivetemp.tmc9a.my.id" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">PUBLIC ARCHIVE</span>]</a>
+            <a href="/tools" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">TOOLS</span>]</a>
+        </div>
+    </header>
+    <main>
+        <div style="margin-top:5rem;height: 70vh;overflow: hidden;background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('/src/img.jpg');background-size: cover;background-position: center;">
+            <h1 class="text-white px-12 libre-baskerville-bold" style="font-size: xx-large;margin-top: 55vh;">Studi Sosial 2025</h1>
+            <p class="ml-12 libre-baskerville-regular text-white">13-18 Oktober 2025</p>
+        </div>
+        <!--div class="tryout bg-zinc-900 text-zinc-100 p-6 px-12 hidden">
+            <h1 class="libre-baskerville-bold text-4xl">Tryout Material 2026</h1>
+            <div class="flex flex-col barlow">
+                <a href="/tryout/english">English</a>
+                <a href="/tryout/math">Mathematics</a>
+                <a href="/tryout/biology">Biology</a>
+                <a href="/tryout/physics">Physics</a>
+                <a href="/tryout/music">Music</a>
+                <a href="/tryout/pjok">PE (PJOK)</a>
+                <a href="/tryout/ips">Social (IPS)</a>
+            </div>
+        </div-->
+        <div class="bg-emerald-500 p-6 px-12 flex justify-between lg:flex-row flex-col gap-3  ">
+            <h1 class="text-3xl text-zinc-100 libre-baskerville-bold">2026 March Monthly Agenda</h1>
+            <a class="lg:bg-zinc-100 p-2 lg:px-4 px-0 lg:text-black font-semibold barlow cursor-pointer hover:bg-zinc-300 text-left bg-transparent text-white" href="/src/docs/march2026.pdf">Open Monthly Agenda <i class="bi bi-arrow-up-right"></i></a>
+        </div>
+        <a href="/yearbook" class="p-12 flex px-12 justify-between flex flex-row hover:pr-24 duration-300" style="background-image: url(/src/bg.jpg);background-size: cover;background-position: center;">
+            <h1 class="libre-baskerville-bold text-3xl text-zinc-100">Contribute for TMC31 Yearbook</h1>
+            <h3 class="text-2xl barlow text-zinc-100 cursor-pointer"><i class="bi bi-arrow-right"></i></h3>
+        </a>
+        <div class="bluets flex-col lg:flex-row">
+            <img src="/src/halftone_1756634919.png" alt="" style="margin-top: 5rem;">
+            <div>
+                <h1 class="libre-baskerville-bold mt-0 lg:mt-24 welcome">Welcome to <span style="text-decoration: underline;">Class 9A</span></h1>
+                <p class="desc text-lg text-white barlow my-4">
+                    Just a simple website for the students, by the students. You can find upcoming exams and homework in this page.
+                </p>
+                <a href="/weekly" class="weekly barlow font-bold bg-white blue67 mr-0 lg:mr-6 p-2 hover:text-white hover:bg-none" style="float: right;margin-top: 1rem;font-size: larger;">Open Weekly Schedule</a>
+            </div>
+        </div>
+        <div class="stats flex-col lg:flex-row">
+            <div>
+                <p class="barlow text-white lg:text-xl text-md font-bold">Number of students</p>
+                <h1 class="barlow text-white">29 students</h1>
+            </div>
+            <div>
+                <a href="/u/26" class="hover:text-white/50">
+                    <p class="barlow text-white lg:text-xl text-md font-bold">Class Leader</p>
+                    <h1 class="barlow text-white">Vicky</h1>
+                </a>
+            </div>
+            <div>
+                <p class="barlow text-white lg:text-xl text-sm font-bold">Class Teacher</p>
+                <h1 class="barlow text-white">Pak Wawan</h1>
+            </div>
+        </div>
+        <script>
+            $('#navbar').hide();
+        </script>
+    </main>
+    <div class="w-full text-right font-bold bg-slate-900 text-white p-2 barlow">TMC9A v4.2 @ March 2026</div>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMC9A - Weekly Schedule</title>
+    <script src="/src/jquery.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .libre-baskerville-regular {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        .libre-baskerville-bold {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 700;
+        font-style: normal;
+        }
+
+        .libre-baskerville-regular-italic {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: italic;
+        }   
+
+        .barlow {
+            font-family: "Barlow";
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/src/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <header class="fixed w-full flex flex-col bg-lime-50 " style="z-index: 3;">
+        <div class="flex flex-row p-5 px-10 items-end">
+            <h1 class="text-3xl text-black lg:mr-10"><a href="/"><span class="libre-baskerville-regular">TMC</span><span class="libre-baskerville-bold">9A</span></a></h1>
+        <div class="hidden lg:block">
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">AGENDA</span>]</a>
+            <a href="/archive" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">PUBLIC ARCHIVE</span>]</a>
+        </div>
+        <a href="/propose" class="hidden lg:block barlow font-bold hover:outline-2 outline-red-500 duration-100 outline-0 outline-offset-2" style="background: #ee0e00;padding: 0.5rem;color: white;margin-left: auto;">[PROPOSE A CHANGE]</a>
+        <button class="ml-auto lg:hidden" onclick="$('#navbar').toggle()"><i class="bi bi-list text-black text-4xl"></i></button>
+        </div>
+        <div class="bg-slate-200 flex flex-col p-4 px-10 gap-4" id="navbar">
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">AGENDA</span>]</a>
+            <a href="/archive" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">PUBLIC ARCHIVE</span>]</a>
+        </div>
+    </header>
+        <script>
+            $('#navbar').hide();
+        </script>
+    <main class="p-12 pt-8">
+        <h1 class="barlow text-3xl font-bold mt-20">Weekly Schedule</h1>
+        <div class="flex lg:flex-row flex-col py-4 gap-4 justify-between">
+            <h1 class="text-2xl barlow font-bold">Monday</h1>
+            <div class="flex gap-4 lg:flex-row flex-col">
+                 <div class="bg-yellow-500 lg:w-32 w-full border-b-5 border-yellow-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">IPS</h1>
+                <p class="barlow">07.25 - 08.45</p>
+            </div>
+            <div class="bg-red-500 lg:w-32 w-full border-b-5 border-red-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">PPKN</h1>
+                <p class="barlow">08.45 - 09.25</p>
+            </div>
+            <div class="bg-blue-500 lg:w-32 w-full border-b-5 border-blue-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">MAT</h1>
+                <p class="barlow">09.55 - 11.15</p>
+            </div>
+            <div class="bg-purple-500 lg:w-32 w-full border-b-5 border-purple-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">PAK</h1>
+                <p class="barlow">11.15 - 11.55, 12.25 - 13.05</p>
+            </div>
+            <div class="bg-lime-500 lg:w-32 w-full border-b-5 border-lime-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">BIO</h1>
+                <p class="barlow">13.05 - 14.25</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row py-4 gap-4 mt-4 justify-between">
+            <h1 class="text-2xl barlow font-bold">Tuesday</h1>
+            <div class="flex gap-4 flex-col lg:flex-row">
+                 <div class="bg-orange-500 lg:w-32 w-full border-b-5 border-orange-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">ING</h1>
+                <p class="barlow">07.25 - 08.45</p>
+            </div>
+            <div class="bg-sky-500 lg:w-32 w-full border-b-5 border-sky-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">INF</h1>
+                <p class="barlow">08.45 - 09.25, 09.55 - 10.35</p>
+            </div>
+            <div class="bg-red-500 lg:w-32 w-full border-b-5 border-red-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">PPKN</h1>
+                <p class="barlow">10.35 - 11.55</p>
+            </div>
+            <div class="bg-amber-500 lg:w-32 w-full border-b-5 border-amber-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">FIS</h1>
+                <p class="barlow">12.25 - 13.05</p>
+            </div>
+            <div class="bg-blue-500 lg:w-32 w-full border-b-5 border-blue-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">MAT</h1>
+                <p class="barlow">13.05 - 14.25</p>
+            </div>
+            </div>
+           
+        </div>
+
+        <div class="flex flex-col lg:flex-row py-4 gap-4 mt-4 justify-between">
+            <h1 class="text-2xl barlow font-bold">Wednesday</h1>
+            <div class="flex gap-4 flex-col lg:flex-row">
+                 <div class="bg-orange-800 lg:w-32 w-full border-b-5 border-orange-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">Prakarya</h1>
+                <p class="barlow">07.25 - 08.45</p>
+            </div>
+            <div class="bg-lime-500 lg:w-32 w-full border-b-5 border-lime-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">BIO</h1>
+                <p class="barlow">08.45 - 09.25</p>
+            </div>
+            <div class="bg-red-500 lg:w-32 w-full border-b-5 border-red-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">IND</h1>
+                <p class="barlow">09.25 - 10.05, 10.35 - 11.15</p>
+            </div>
+            <div class="bg-slate-800 lg:w-32 w-full border-b-5 border-slate-500 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">B. ASING</h1>
+                <p class="barlow">11.15 - 12.35</p>
+            </div>
+            <div class="bg-yellow-500 lg:w-32 w-full border-b-5 border-yellow-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">IPS</h1>
+                <p class="barlow">13.05 - 14.25</p>
+            </div>
+            </div>
+           
+        </div>
+        <div class="flex flex-col lg:flex-row py-4 gap-4 mt-4 justify-between">
+            <h1 class="text-2xl barlow font-bold">Thursday</h1>
+            <div class="flex gap-4 flex-col lg:flex-row">
+                 <div class="bg-indigo-500 lg:w-32 w-full border-b-5 border-indigo-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">PJOK</h1>
+                <p class="barlow">07.25 - 09.25</p>
+            </div>
+            <div class="bg-red-500 lg:w-32 w-full border-b-5 border-red-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">IND</h1>
+                <p class="barlow">09.55 - 11.15</p>
+            </div>
+            <div class="bg-green-500 lg:w-32 w-full border-b-5 border-green-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">SUN</h1>
+                <p class="barlow">11.15 - 11.55</p>
+            </div>
+            <div class="bg-purple-500 lg:w-32 w-full border-b-5 border-purple-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">PAK</h1>
+                <p class="barlow">12.25 - 13.05</p>
+            </div>
+            <div class="bg-orange-800 lg:w-32 w-full border-b-5 border-orange-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">SENI</h1>
+                <p class="barlow">13.05 - 14.25</p>
+            </div>
+            </div>
+           
+        </div>
+        <div class="flex flex-col lg:flex-row py-4 gap-4 mt-4 justify-between">
+            <h1 class="text-2xl barlow font-bold">Friday</h1>
+            <div class="flex gap-4 flex-col lg:flex-row">
+                 <div class="bg-amber-500 lg:w-32 w-full border-b-5 border-amber-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">FIS</h1>
+                <p class="barlow">07.25 - 08.45</p>
+            </div>
+            <div class="bg-red-500 lg:w-32 w-full border-b-5 border-red-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">IND</h1>
+                <p class="barlow">08.45 - 09.25, 09.55 - 10.35</p>
+            </div>
+            <div class="bg-blue-500 lg:w-32 w-full border-b-5 border-blue-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">MAT</h1>
+                <p class="barlow">10.35 - 11.55</p>
+            </div>
+            <div class="bg-orange-500 lg:w-68 w-full border-b-5 border-orange-300 text-white p-4">
+                <h1 class="font-bold text-2xl barlow">ING</h1>
+                <p class="barlow">12.25 - 14.25</p>
+            </div>
+            </div>
+           
+        </div>
+    </main>
+
+</body>
+</html>

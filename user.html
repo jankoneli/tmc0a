@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMC9A - 9A's Official Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .libre-baskerville-regular {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        .libre-baskerville-bold {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 700;
+        font-style: normal;
+        }
+
+        .libre-baskerville-regular-italic {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: italic;
+        }   
+
+        .barlow {
+            font-family: "Barlow";
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/src/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <script src="https://accounts.google.com/gsi/client" async></script>
+</head>
+<body>
+    <header class="fixed w-full flex flex-col bg-lime-50" style="z-index: 3;top: 0;">
+        <div class="flex flex-row p-5 px-10 items-end">
+            <h1 class="text-3xl text-black lg:mr-10"><a href="/"><span class="libre-baskerville-regular">TMC</span><span class="libre-baskerville-bold">9A</span></a></h1>
+        <div class="hidden lg:block">
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">AGENDA</span>]</a>
+            <a href="/archive" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">PUBLIC ARCHIVE</span>]</a>
+        </div>
+        <a href="/propose" class="hidden lg:block barlow font-bold hover:outline-2 outline-red-500 duration-100 outline-0 outline-offset-2" style="background: #ee0e00;padding: 0.5rem;color: white;margin-left: auto;">[PROPOSE A CHANGE]</a>
+        <button class="ml-auto lg:hidden" onclick="$('#navbar').toggle()"><i class="bi bi-list text-black text-4xl"></i></button>
+        </div>
+        <div class="bg-slate-200 flex flex-col p-4 px-10 gap-4" id="navbar">
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">AGENDA</span>]</a>
+            <a href="/archive" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">PUBLIC ARCHIVE</span>]</a>
+        </div>
+    </header>
+      <script>
+                $('#navbar').hide();
+            </script>
+    <main class="lg:p-12 lg:pt-30 flex pr-6 pl-12 pt-30 flex-col lg:flex-row">
+        <img src="https://placehold.co/600x800" class="w-fulllg:w-60 mr-4" alt="" srcset="" id="userimg">
+        <div>
+            <h1 class="font-bold barlow text-3xl mt-4 lg:mt-0 mb-4" id="name">Students List</h1>
+            <h3 class="barlow text-xl" id="studentid">ID: --id</h3>
+        </div>
+        <div id="g_id_onload"
+     data-client_id="867641690581-sjr419041teu1nhcb602qeo1hri01454.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-callback="credtmc"
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin"
+     data-type="standard"
+     data-shape="rectangular"
+     data-theme="outline"
+     data-text="signin_with"
+     data-size="large"
+     data-logo_alignment="left">
+</div>
+    </main>
+
+    <script>
+        function decodeJWT(token) {
+
+        let base64Url = token.split(".")[1];
+        let base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+        let jsonPayload = decodeURIComponent(
+          atob(base64)
+            .split("")
+            .map(function (c) {
+              return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+            })
+            .join("")
+        );
+        return JSON.parse(jsonPayload);
+      }
+
+      function credtmc(response) {
+
+        console.log("Encoded JWT ID token: " + response.credential);
+
+        const responsePayload = decodeJWT(response.credential);
+
+        console.log("Decoded JWT ID token fields:");
+        console.log("  Full Name: " + responsePayload.name);
+        console.log("  Given Name: " + responsePayload.given_name);
+        console.log("  Family Name: " + responsePayload.family_name);
+        console.log("  Unique ID: " + responsePayload.sub);
+        console.log("  Profile image URL: " + responsePayload.picture);
+        console.log("  Email: " + responsePayload.email);
+      }
+        var studentsname = "Abraham Judika Marpaung,Albert Tito Ebenhaezer Simanjuntak,Antonio Tesuan Panga De Daur,Bradley William Hamonangan Situmorang,Callysta Nathania Leora Rumapea,Cornelius Christian,Danisa Aviela Dhiartanto,Devdanendra Junjie Abhipraya Ganoto,Edrei Matthew Pratama,Evan Timotius Haposan Sinulingga,Giselle Nathania Jasmine Pranandhono,Gladys Emely Angelina,Hannah Ziw Laone,Hizkia Damar Suhardi,I Gusti Ayu Sri Parvati Pradeepta Aryadharma,Kenourios Navidad Pindonta Ginting,Kevin Adiatmo Filemon,Laudri Christo Fillio David Sompotan,Marsha Lanaya Rompas,Nathanael Christian Sitorus,Renata Arikadewi BR Sitepu,Samuel Martua Sebastian Nadapdap,Theodore Philip Hasiholan Panjaitan,Theophanie Eliana Putri,Timothy Samuel SolaGracia Purba,Timotius Asyer Sihotang,Victoria Yolanda Sianturi,Widya Emeralda Simamora".split(",")
+        document.getElementById("name").innerText = studentsname[window.location.href.split("/u/")[1]]
+        $("#studentid").text("ID: "+(parseInt(window.location.href.split("/u/")[1])+1))
+        $("#userimg").attr("src", "/img/"+window.location.href.split("/u/")[1])
+    </script>
+</body>
+</html>

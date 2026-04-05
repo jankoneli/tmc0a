@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/src/jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="/src/lightgallery/css/lightgallery-bundle.css" />
+    
+    <style>
+        *{
+            font-family: Jost;
+        }
+        #lightgallery a img{
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            transition: 0.15s;
+        }
+        #lightgallery a img:hover{
+            transform: scale(1.04);
+        }
+    </style>
+</head>
+<body>
+    <div class="p-4">
+        <a href="/archive" class="hover:text-zinc-400 text-zinc-900">< Return to archive</a>
+    </div>
+    <h1 id="ititle" class="text-center pt-12 font-semibold text-2xl">Primary School</h1>
+    <h2 class="text-center">TMC PUBLIC ARCHIVE</h2>
+    <a class="bg-blue-500 text-zinc-100 p-2 rounded-lg py-1" style="position: absolute;top:11rem;right: -0.6rem; transform: translate(-50%, -50%);" href="https://docs.google.com/forms/d/e/1FAIpQLSdqhgHrtZGAF9fxQhKOSuEVX5bvnHfMSf5auhijqJEAqY2P7A/viewform?usp=dialog">Submit Images</a>
+    <div id="lightgallery" class="p-12 grid md:grid-cols-3 grid-cols-1 gap-4">
+
+    </div>
+    <script src="/src/lightgallery/lightgallery.umd.js"></script>
+    <script src="/src/lightgallery/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+    <script src="/src/lightgallery/plugins/zoom/lg-zoom.umd.js"></script>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    const socket = io();
+    filenames = {
+        "primary":"sd",
+        "studsos":"studsos"
+    }
+    titles = {
+        "primary":"Primary School",
+        "studsos":"Social Study"
+    }
+    socket.emit('requestimage', window.location.href.split("/").at(-1));
+    $("#ititle").text(titles[window.location.href.split("/").at(-1)])
+    socket.on("imagelist", (imglist, alttext) => {
+        console.log(alttext);
+        console.log(imglist);
+        imglist.forEach(element => {
+            $("#lightgallery").append("<a href='/src/archive/--folder/--filename'><img src='/src/archive/--folder/--filename' alt='--alt' srcset=''></a>".replaceAll("--filename", element).replaceAll("--folder", filenames[window.location.href.split("/").at(-1)]).replaceAll("--alt", alttext[element.split(".")[0]]))
+        });
+        lightGallery(document.getElementById('lightgallery'), {
+            plugins: [lgZoom, lgThumbnail],
+            licenseKey: '0000-0000-000-0000',
+            speed: 500,
+            thumbnail: true
+            // ... other settings
+        });
+    })
+    </script><script type="text/javascript">
+        
+    </script>
+</body>
+</html>

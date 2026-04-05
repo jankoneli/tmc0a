@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMC9A - Upcoming Events</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/src/jquery.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .libre-baskerville-regular {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        .libre-baskerville-bold {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 700;
+        font-style: normal;
+        }
+
+        .libre-baskerville-regular-italic {
+            font-family: "Libre Baskerville", serif;
+            font-weight: 400;
+            font-style: italic;
+        }   
+        
+        .barlow {
+            font-family: "Barlow";
+        }
+        </style>
+</head>
+<body>
+    <header class="fixed w-full flex flex-col bg-lime-50 " style="z-index: 3;">
+        <div class="flex flex-row p-5 px-10 items-end">
+            <h1 class="text-3xl text-black lg:mr-10"><a href="/"><span class="libre-baskerville-regular">TMC</span><span class="libre-baskerville-bold">9A</span></a></h1>
+        <div class="hidden lg:block">
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">AGENDA</span>]</a>
+            <a href="/archive" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">PUBLIC ARCHIVE</span>]</a>
+        </div>
+        <a href="/propose" class="hidden lg:block barlow font-bold hover:outline-2 outline-red-500 duration-100 outline-0 outline-offset-2" style="background: #ee0e00;padding: 0.5rem;color: white;margin-left: auto;">[PROPOSE A CHANGE]</a>
+        <button class="ml-auto lg:hidden" onclick="$('#navbar').toggle()"><i class="bi bi-list text-black text-4xl"></i></button>
+        </div>
+        <div class="bg-slate-200 flex flex-col p-4 px-10 gap-4" id="navbar">
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">AGENDA</span>]</a>
+            <a href="/archive" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-black">PUBLIC ARCHIVE</span>]</a>
+        </div>
+    </header>
+        <script>
+            $('#navbar').hide();
+        </script>
+    <main class="p-12 pt-24 lg:p-24 lg:pt-40">
+        <h1 class="text-3xl barlow font-bold text-slate-900">Daily Agenda</h1>
+        <div class="flex flex-col mt-4 gap-4 mb-8">
+            <div class="bg-slate-200 border-b-2 border-slate-300 p-2 px-4 font-bold barlow flex flex-col" id="1">
+                <div class="flex justify-between flex-col lg:flex-row">
+                    <h3 id="agendadate">30 October 2025 - Wednesday</h3>
+                    <a href="/agenda/update" clas   s="cursor-pointer hover:bg-slate-400 pb-2 lg:pb-0 lg:px-2 font-light">Update Agenda <i class="bi bi-pencil-fill ml-2"></i></a>
+                </div>
+                <div>
+                    <p class="font-medium" id="agendalist"><i>Studi Sosial</i> is a 5-day activity to Temanggung, Central Java. This event lasts from 13-18 October 2025. <br>Documentation GDrive: <a href="https://drive.google.com/drive/folders/1CYnXk6wbZgzMisVD_vGY9DfwFMvn6-2n" class="break-all text-blue-500">https://drive.google.com/drive/folders/1CYnXk6wbZgzMisVD_vGY9DfwFMvn6-2n</a></p>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-3xl barlow font-bold text-slate-900">Upcoming/Finished Events</h1>
+        <div class="flex flex-col mt-4 gap-4">
+            <div class="bg-slate-200 border-b-2 border-slate-300 p-2 px-4 font-bold barlow flex flex-col" id="1">
+                <div class="flex justify-between flex-col lg:flex-row">
+                    <h3>001 - Social Study (Studi Sosial)</h3>
+                    <a href="/src/docs/studisosial.pdf" class="cursor-pointer hover:bg-slate-400 pb-2 lg:pb-0 lg:px-2 font-light">Download Booklet <i class="bi bi-download pl-2"></i></a>
+                </div>
+                <div>
+                    <p class="font-medium"><i>Studi Sosial</i> is a 5-day activity to Temanggung, Central Java. This event lasts from 13-18 October 2025. <br>Documentation GDrive: <a href="https://drive.google.com/drive/folders/1CYnXk6wbZgzMisVD_vGY9DfwFMvn6-2n" class="break-all text-blue-500">https://drive.google.com/drive/folders/1CYnXk6wbZgzMisVD_vGY9DfwFMvn6-2n</a><br>Additional Photos: <a class="text-blue-500" href="https://drive.google.com/drive/folders/1mkhTbhqagm-u3SEV37UO0W1Plm9MloMA?usp=sharing">https://drive.google.com/drive/folders/1mkhTbhqagm-u3SEV37UO0W1Plm9MloMA?usp=sharing</a></p>
+                </div>
+            </div>
+            <div class="bg-slate-200 border-b-2 border-slate-300 p-2 px-4 font-bold barlow flex justify-between">
+                <h3>002 - ???</h3>
+                <button class="cursor-pointer hover:bg-slate-400 px-2 font-light">More<i class="bi bi-arrow-down-short"></i></button>
+                
+            </div>
+        </div>
+
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+    const socket = io();
+    socket.emit('requestagenda');
+    socket.on('agendadata', (agendatitle) => {
+        console.log(agendatitle)
+        $('#agendadate').text(agendatitle[0]);
+        $('#agendalist').html(agendatitle[1].replaceAll("\n", "<br>"))
+    })
+    </script>
+</body>
+</html>

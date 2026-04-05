@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tryout Material - TMC9A Info Center</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/src/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <style>
+        *{
+            font-family: Jost;
+            font-weight: 300;
+            font-size: large;
+        }
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        h2{
+            font-size: x-large;
+            font-weight: 500;
+        }
+        ol{
+            list-style-type: decimal;
+        }
+        ul{
+            list-style-type: disc;
+        }
+        li{
+            margin-left: 3rem;
+            font-size: medium;
+        }
+        @media (min-width: 768px) {
+            h1{
+                font-size: 3rem;
+            }
+            h2{
+                font-size: xx-large;
+            }
+        }
+    </style>
+</head>
+<body class="bg-zinc-900">
+    <br>
+    <a href="/" class="m-4 text-zinc-100">< Return</a>
+    <div class="m-4 p-4 lg:m-12 lg:p-12 lg:px-24 w-auto bg-zinc-950 text-zinc-100" id="info">
+
+    </div>
+    <script>
+        const socket = io();
+        subject = window.location.toString().split("/").at(-1)
+        socket.emit("requestTryout", subject)
+        socket.on("marked", (htmlfile) => {
+            $("#info").append(htmlfile);
+        })  
+    </script>
+</body>
+</html>

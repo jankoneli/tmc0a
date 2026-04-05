@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wlink - link shortener you can remember</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        *{
+            font-family: Space Mono;
+        }
+    </style>
+</head>
+<body class="bg-zinc-900 lg:px-0 px-4">
+    <h1 class="text-4xl font-bold smono text-center mb-4 text-zinc-100 mt-90">wlink</h1>
+    <div class="flex text-zinc-100 w-full justify-center lg:items-auto items-center lg:flex-row flex-col">
+        <input type="text" id="thelink" class="border-1 border-zinc-400 w-full lg:ml-64 mx-4 outline-none">
+        <button class="px-2 bg-zinc-100 lg:mt-0 mt-2 text-zinc-800 cursor-pointer hover:bg-zinc-300 lg:mr-64">Shorten</button>
+    </div>
+    <p class="text-zinc-400 text-center mt-6">Shorten your link to something you can remember.</p>
+</body>
+</html>

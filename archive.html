@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        .libre-baskerville-regular {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+        .libre-baskerville-bold {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 700;
+        font-style: normal;
+        }
+
+        .libre-baskerville-regular-italic {
+        font-family: "Libre Baskerville", serif;
+        font-weight: 400;
+        font-style: italic;
+        }   
+
+        .barlow {
+            font-family: "Jost";
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="/src/jquery.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-zinc-950">
+    <!--header class="fixed w-full flex flex-col bg-zinc-950" style="z-index: 3;top: 0;">
+        <div class="flex flex-row p-5 px-10 items-end">
+            <h1 class="text-3xl text-zinc-50 lg:mr-10"><a href="/"><span class="libre-baskerville-regular">TMC</span><span class="libre-baskerville-bold">9A</span></a></h1>
+        <div class="hidden lg:block">
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-zinc-50">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-zinc-50">AGENDA</span>]</a>
+            <a href="/archive" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-zinc-50">PUBLIC ARCHIVE</span>]</a>
+        </div>
+        <a href="/propose" class="hidden lg:block barlow font-bold hover:outline-2 outline-red-500 duration-100 outline-0 outline-offset-2" style="background: #ee0e00;padding: 0.5rem;color: white;margin-left: auto;">[PROPOSE A CHANGE]</a>
+        <button class="ml-auto lg:hidden" onclick="$('#navbar').toggle()"><i class="bi bi-list text-zinc-50 text-4xl"></i></button>
+        </div>
+        <div class="bg-zinc-800 flex flex-col p-4 px-10 gap-4" id="navbar">
+            <a href="/students" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-zinc-50">STUDENTS</span>]</a>
+            <a href="/agenda" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-zinc-50">AGENDA</span>]</a>
+            <a href="/archive" class="mr-4 barlow font-bold text-orange-500">[<span class="duration-150 hover:px-2 text-zinc-50">PUBLIC ARCHIVE</span>]</a>
+        </div>
+    </header-->
+    <main class="pt-16 bg-zinc-950">
+        <div class="flex">
+            <a href="/" class="text-zinc-200 hover:text-zinc-700 barlow lg:pl-24 pl-8">< Return to homepage</a><span class="ml-2 text-zinc-200"> | </span>
+            <a href="/upload/archive" class="text-zinc-200 hover:text-zinc-700 barlow ml-2">Upload archive</a>
+        </div>
+        <hr class="border-zinc-800 my-2">
+        <div class="pl-8 lg:pl-24">
+            <h1 class="text-6xl lg:text-8xl w-60 libre-baskerville-regular text-white/90"><span class="text-blue-500">TMC</span> 31 <span class="text-yellow-500">PUBLIC</span> <span class="text-red-500">ARCHIVE</span></h1>
+        </div>
+        <div class="pl-8 pt-8 w-full pr-20 lg:pl-24 lg:text-xl text-md wrap">
+            <p class="text-zinc-100 wrap-break-word pr-4 barlow">Remembrance for our long journey, here at Tirtamarta BPK Penabur Cinere. The archive is publicly available for all members. The archive contains almost all photos, videos, documents and any other forms of media taken from 2023-2026. <br><br><i class="italic text-zinc-500">“Don't be sad that it is over, be happy that it happened.”</i></p>
+        </div>
+        <hr class="border-b border-1 border-zinc-200 my-16 lg:ml-12 ml-8 w-auto mr-8 lg:mr-0 lg:w-auto">
+        <div class="grid grid-rows-auto lg:pl-12 pl-8">
+            <a href="/archive/primary" class="cursor-pointer hover:translate-x-4 duration-150 lg:ml-12 w-auto lg:mr-12 mr-8 mb-4 p-8" style="border-radius: 20px;background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url(/src/archive/sd/1.jpg);background-position: center;background-size: cover;height: 20rem;">
+                <h1 class="barlow text-2xl text-white font-bold">Primary School (Sekolah Dasar)</h1>
+            </a>
+            <a href="/archive/studsos" class="cursor-pointer hover:translate-x-4 duration-150 lg:ml-12 w-auto lg:mr-12 mr-8 mb-4 p-8" style="border-radius: 20px;background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url(/src/archive/studsos/2025_OCTOBER_IMAGE_STUDSOS_01.jpg);background-position: center;background-size: cover;height: 20rem;">
+                <h1 class="barlow text-2xl text-white font-bold">Social Study (Studi Sosial)</h1>
+            </a>
+        </div>
+    </main>
+    <script>
+        $('#navbar').hide();
+    </script>
+</body>
+</html>

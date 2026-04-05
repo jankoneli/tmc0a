@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Archive - TMC9A</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
+    <style>
+        .title {
+        font-family: "BBH Bogle", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        }
+
+    </style>
+    <script src="/src/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js" integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body class="bg-zinc-950 p-0 m-0">
+    <script src="/socket.io/socket.io.js"></script>
+    <div class="p-5">
+        <a href="/" class="text-zinc-100 title text-xl hover:text-zinc-300">< RETURN TO HOMEPAGE</a>
+    </div>
+    <div class="p-4 bg-zinc-200 title pt-5" style="transform: translate(-50%, -50%);position: absolute;top: 50%;left: 50%;">
+        <div class="">
+            <input type="file" name="avatar" class="hidden" id="files"/>
+            <label for="files" class="bg-zinc-900 text-zinc-100 p-2 text-center w-full lg:px-50 cursor-pointer hover:bg-zinc-700 w-full lg:w-auto block lg:text-3xl text-md" id="labelb">Select archive</label>
+        </div>
+        <div id="filelist" class="mt-2"></div>
+        <input type="text" placeholder="Description for image" class="outline-none w-full" id="desc">
+        <input type="password" name="" id="greenlight" placeholder="Enter greenlight key" class="mt-8 p-2 px-4 w-full text-2xl outline-none border-b-1 border-zinc-800"/>
+        <div class="flex justify-between mt-2">
+            <select name="" id="category" class="px-4 text-xl outline-none bg-zinc-300">
+                <option value="sd">Primary School (SD)</option>
+                <option value="studsos">Social Study (Studi Sosial)</option>
+            </select>
+            <button class="bg-green-500 mt-2 p-2 text-xl hover:opacity-80 cursor-pointer" id="publishbtn">Publish</button>
+        </div>
+    </div>
+   <script>
+    $("#files").on("change", () => {
+        $("#filelist").html("");
+        var reader = new FileReader();
+        var img = document.createElement("img");
+        reader.onloadend= () => {
+            img.src = reader.result;
+            img.style.width = document.getElementById("labelb").getBoundingClientRect().width.toString() + "px"
+        }
+        reader.readAsDataURL($("#files").prop("files")[0])
+        $("#files").before(img);
+        
+        for(i=0; i<$("#files").prop("files").length; i++){
+            if(i<10){
+                $("#filelist").append("<div class='border-b-1 border-zinc-800 p-2 bg-zinc-300 text-zinc-900 text-xl'>"+$("#files").prop("files")[i].name+"</div>");
+            }else if(i==10){
+                $("#filelist").append("<div class='border-b-1 border-zinc-800 p-2 bg-zinc-300 text-zinc-900 text-xl'>...</div>");
+            }
+            
+        }
+    })
+    const socket = io();
+    $("#publishbtn").on("click", (e) => {
+        e.preventDefault();
+        socket.emit('uploadrequest', {
+            key: $("#greenlight").val(),
+            category: $("#category").val(),
+            description: $("#desc").val()
+        }, $("#files").prop("files")[0]);
+    })
+    socket.on('uploadsuccess', () => {
+        $('#greenlight').val("");
+        $('#desc').val("");
+        $('#files').val("");
+        alert("Upload successful!");
+        window.location.reload();
+    })
+   </script>
+    
+</body>
+</html>
